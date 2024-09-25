@@ -25,7 +25,7 @@ class RoleButton(discord.ui.Button):
 
 class RoleView(discord.ui.View):
     def __init__(self, roles):
-        super().__init__()
+        super().__init__(timeout=None)
         for label, role_id in roles.items():
             self.add_item(RoleButton(label, role_id))
 
