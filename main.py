@@ -33,7 +33,8 @@ class RoleView(discord.ui.View):
 async def role_buttons(ctx):
     roles = {
         "1137": 1288142856674086943,
-        "1138": 1288142664625295421
+        "1138": 1288142664625295421,
+        "Visitor": 1302953783575187547
     }
     view = RoleView(roles)
     await ctx.send("Choose the group role you want:", view=view)
