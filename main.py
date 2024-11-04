@@ -19,9 +19,9 @@ class RoleButton(discord.ui.Button):
         if role:
             if role not in interaction.user.roles:
                 await interaction.user.add_roles(role)
-                await interaction.response.send_message(f"Acum faci parte din {role.name}.", ephemeral=True)
+                await interaction.response.send_message(f"You are now part of {role.name}.", ephemeral=True)
             else:
-                await interaction.response.send_message(f"Deja faci parte din {role.name}!", ephemeral=True)
+                await interaction.response.send_message(f"You are already part of {role.name}!", ephemeral=True)
 
 class RoleView(discord.ui.View):
     def __init__(self, roles):
@@ -37,7 +37,7 @@ async def role_buttons(ctx):
         "Visitor": 1302953783575187547
     }
     view = RoleView(roles)
-    await ctx.send("Choose the group role you want:", view=view)
+    await ctx.send("Choose the role you want:", view=view)
 
 @bot.event
 async def on_ready():
